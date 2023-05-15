@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  /* background: #252A2F; */
+  color: #fff;
+  overflow-x: hidden;
+}
+
+
+
+.darken-box-shadow {
+  box-shadow: 0 0 0 max(100vh, 100vw) rgba(0, 0, 0, 0.5);
+}
