@@ -5,9 +5,9 @@ const Navbar = () => {
   const location = useLocation()
 
   return (
-    <nav className='border-b-2 border-lime-300 h-[8vh] flex justify-between items-center px-2 sticky top-0 z-40 bg-darkbg'>
+    <nav className='border-b border-lime-300 h-[8vh] flex justify-between items-center p-2 sticky top-0 z-40 bg-darkbg'>
       <Link to={'/'} className="navbarBrand text-lime-300 font-semibold">
-        <h1>AquaProCheck</h1>
+        <img src="/logo.png" alt="" className='invert h-[2.5rem]' />
       </Link>
 
       <ul className="navList list-none flex justify-between space-x-5">

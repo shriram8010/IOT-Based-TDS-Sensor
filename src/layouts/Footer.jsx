@@ -24,7 +24,7 @@ const Footer = () => {
 
       <hr />
 
-      <p className='text-center'>&copy; 2023 AquaProCheck</p>
+      <a href='https://www.linkedin.com/in/omkar-ghodake/' target='_blank' className='text-center'>&copy; 2023 OG</a>
     </footer>
   )
 }

@@ -1,10 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import "react-responsive-carousel/lib/styles/carousel.min.css"
-import { Carousel } from 'react-responsive-carousel'
-import img1 from '../assets/carousel1.jpg'
-import img2 from '../assets/carousel2.jpg'
-import img3 from '../assets/carousel3.jpg'
 import { FaHandHoldingWater } from 'react-icons/fa'
 
 const Index = () => {
