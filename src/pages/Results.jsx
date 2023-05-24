@@ -27,6 +27,7 @@ const Results = () => {
   }
 
   useEffect(() => {
+    // change color according to result
     if (latestResult?.field1) {
       if (latestResult.field1 <= 50) {
         setValueColor('text-white')
