@@ -19,7 +19,7 @@ function App() {
   const [progress, setProgress] = useState(0)
 
   return (
-    <div className="App bg-darkbg">
+    <div className="App bg-darkbg selection:bg-lime-500 selection:text-white">
       <BrowserRouter>
         <ResultsState setProgress={setProgress}>
           {/* h-8vh */}

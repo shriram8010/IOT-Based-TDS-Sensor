@@ -18,7 +18,7 @@ const ResultsState = (props) => {
 
       setProgress(20)
 
-      const response = await fetch(`https://api.thingspeak.com/channels/2159620/fields/1.json?api_key=${import.meta.env.VITE_THINGSPEAK_API_KEY}`)
+      const response = await fetch(`https://api.thingspeak.com/channels/2159620/fields/1.json?api_key=8IOKBRWW78ZNEO80`)
 
       setProgress(40)
 
