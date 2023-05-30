@@ -1,33 +1,52 @@
 import React, { createContext, useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import swal from 'sweetalert'
 
 const ResultsContext = createContext()
 
 const ResultsState = (props) => {
   const { setProgress } = props
 
+  const navigate = useNavigate()
+
   const [results, setResults] = useState()
   const [latestResult, setLatestResult] = useState()
   const [channel, setChannel] = useState()
 
   const getResults = async () => {
-    setProgress(20)
+    try {
 
-    const response = await fetch(`https://api.thingspeak.com/channels/2159620/fields/1.json?api_key=${import.meta.env.VITE_THINGSPEAK_API_KEY}`)
+      setProgress(20)
 
-    setProgress(40)
+      const response = await fetch(`https://api.thingspeak.com/channels/2159620/fields/1.json?api_key=${import.meta.env.VITE_THINGSPEAK_API_KEY}`)
 
-    const parsed = await response.json()
+      setProgress(40)
 
-    setProgress(60)
+      const parsed = await response.json()
 
-    setResults(parsed)
-    setChannel(parsed.channel)
+      if (!parsed?.channel?.id) {
+        swal("Oops, Something went wrong! ", "Try Again Refreshing the Page.", "error")
+        setProgress(100)
+        return navigate('/')
+      }
 
-    setProgress(80)
+      setProgress(60)
 
-    setLatestResult(parsed.feeds[(Object.keys(parsed.feeds))[(Object.keys(parsed.feeds)).length - 1]])
+      setResults(parsed)
+      setChannel(parsed.channel)
 
-    setProgress(100)
+      setProgress(80)
+
+      setLatestResult(parsed.feeds[(Object.keys(parsed.feeds))[(Object.keys(parsed.feeds)).length - 1]])
+
+      setProgress(100)
+
+    } catch (error) {
+      console.error(error)
+      swal("Oops", "Something went wrong!", "error")
+      setProgress(100)
+      return navigate('/')
+    }
   }
 
   useEffect(() => {

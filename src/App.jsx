@@ -2,7 +2,8 @@ import './App.css'
 import {
   BrowserRouter,
   Routes,
-  Route
+  Route,
+  Navigate
 } from 'react-router-dom'
 import Index from './pages/Index'
 import Navbar from './layouts/Navbar'
@@ -19,8 +20,8 @@ function App() {
 
   return (
     <div className="App bg-darkbg">
-      <ResultsState setProgress={setProgress}>
-        <BrowserRouter>
+      <BrowserRouter>
+        <ResultsState setProgress={setProgress}>
           {/* h-8vh */}
           <Navbar />
 
@@ -36,13 +37,14 @@ function App() {
               <Route path='/results' element={<Results />} />
               <Route path='/knowmore' element={<KnowMore />} />
               <Route path='/history' element={<ResultsHistory />} />
+              <Route path='*' element={<Navigate to={'/'} replace />} />
             </Routes>
           </div>
 
           {/* h-25vh */}
           <Footer />
-        </BrowserRouter>
-      </ResultsState>
+        </ResultsState>
+      </BrowserRouter>
     </div>
   )
 }

@@ -5,8 +5,11 @@ import { ResultsContext } from '../context/ResultsState'
 import { formatDate, getDate, getDay, getTime } from '../utils/formatFunctions'
 import { BsClockHistory } from 'react-icons/bs'
 import { RiRefreshLine } from 'react-icons/ri'
+import { useLocation } from 'react-router-dom'
 
 const Results = () => {
+  const location = useLocation()
+
   const { latestResult, channel, getResults } = useContext(ResultsContext)
 
   const [settings, setSettings] = useState(false)
@@ -65,6 +68,10 @@ const Results = () => {
       document.removeEventListener("mousedown", handleClickOutsideElement)
     }
   }, [optionsData])
+
+  useEffect(() => {
+    getResults()
+  }, [])
 
 
   if (!latestResult) return
