@@ -31,7 +31,7 @@ function App() {
 
           />
 
-          <div className='min-h-[67vh]'>
+          <div className=''>
             <Routes>
               <Route path='/' element={<Index />} />
               <Route path='/results' element={<Results />} />

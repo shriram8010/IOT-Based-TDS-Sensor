@@ -77,7 +77,7 @@ const Results = () => {
   if (!latestResult) return
 
   return (
-    <div className='p-2'>
+    <div className='p-2 max-w-[100vw] max-h-[110vh] overflow-x-hidden'>
       <h1 className='text-center text-4xl text-lime-400 font-medium'>YOUR RESULTS</h1>
 
       <div className={`my-5 relative`}>
