@@ -6,9 +6,9 @@ const Footer = () => {
 
   return (
     <footer className='border-t-2 border-t-lime-300 flex flex-col justify-evenly h-[25vh] z-40'>
-      <h1 className='text-lime-300 text-2xl font-semibold flex justify-center items-center'>
-        AquaProCheck
-      </h1>
+      <Link to={'/'} className="navbarBrand text-lime-300 font-semibold">
+        <img src="/logo.png" alt="" className='invert h-[2.5rem] mx-auto' />
+      </Link>
 
       <ul className="navList list-none flex flex-col items-center justify-evenly">
         <li className={`navItem ${location.pathname === '/' && 'text-blue-300'} ${location.pathname !== '/' && 'hover:text-blue-200'} font-medium hover:scale-110  duration-150`}>
@@ -24,7 +24,7 @@ const Footer = () => {
 
       <hr />
 
-      <a href='https://www.linkedin.com/in/omkar-ghodake/' target='_blank' className='text-center'>&copy; 2023 OG</a>
+      <a href='https://www.linkedin.com/in/omkar-ghodake/' target='_blank' className='text-center'>&copy; 2023 <span className='text-transparent'> OG</span></a>
     </footer>
   )
 }
