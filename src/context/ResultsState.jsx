@@ -12,6 +12,7 @@ const ResultsState = (props) => {
   const [results, setResults] = useState()
   const [latestResult, setLatestResult] = useState()
   const [channel, setChannel] = useState()
+  const [apiKey, setApiKey] = useState('8IOKBRWW78ZNEO80')
 
   const getResults = async () => {
     try {
@@ -20,7 +21,7 @@ const ResultsState = (props) => {
 
       // fetch request
       console.log('THINGSPEAK:', THINGSPEAK_API_KEY)
-      const response = await fetch(`https://api.thingspeak.com/channels/2159620/fields/1.json?api_key=${THINGSPEAK_API_KEY}`)
+      const response = await fetch(`https://api.thingspeak.com/channels/2159620/fields/1.json?api_key=${apiKey}`)
 
       setProgress(40)
 
