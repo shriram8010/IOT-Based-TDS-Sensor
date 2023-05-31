@@ -20,7 +20,6 @@ const ResultsState = (props) => {
       setProgress(20)
 
       // fetch request
-      console.log('THINGSPEAK:', THINGSPEAK_API_KEY)
       const response = await fetch(`https://api.thingspeak.com/channels/2159620/fields/1.json?api_key=${apiKey}`)
 
       setProgress(40)
